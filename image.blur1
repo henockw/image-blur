@@ -1,1 +1,19 @@
-image.blur1
+class Image
+  attr_reader :blurred_image
+  
+  def initialize(image_array)
+    if image_array.empty?
+      puts "Your image is empty"
+    end
+    @image_array = image_array
+      
+  end
+  
+  def output_image
+    @image_array.each do |element|    # print by element vs joined elements
+      element.each do |sub_element|
+        print sub_element             # keep elements in each row together
+      end
+      puts
+    end
+  end
